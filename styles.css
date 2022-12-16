@@ -1,40 +1,127 @@
+
 body {
-  background-image: url("assets/1.png");
-  background-size: cover;
+    width: 100%;
+    background-color: rgb(197, 196, 196);
+    font-family: 'Open Sans'; font-size: 22px;
 }
+
+/* Makes all h1 stuff invisible until they're faded in */
 h1 {
-  color: blue;
-}
-p {
-  color: red;
+    opacity:0;
+    font-weight: 900;
 }
 
-/* The navigation bar */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+
+.box1 {
+    background-color: rgb(146, 155, 155);
+    padding: 5px;
+    position: fixed;
+    transition: transform .2s;
+    width: 1%;
+    height: 1%;
+    margin: 0 auto;
 }
 
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.box1 {
+    /*animation: 5s ease-out 0s 1 FadeIn;*/
+    animation: 2s ease-out 0.5s forwards Grow;
 }
 
-/* Change background on mouse-over */
-.navbar a:hover {
-  background: #ddd;
-  color: black;
+.box1 h1 {
+    text-align: center;
+    top: 500px;
+    animation: 2s ease-out 2.5s forwards FadeIn;
 }
 
-/* Main content */
-.main {
-  margin-top: 30px; /* Add a top margin to avoid content overlay */
+@keyframes FadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
 }
+
+@keyframes Grow {
+    0% {
+        width: 1%;
+        height: 1%;
+    }
+    50% {
+        width: 99%;
+        height: 1%;
+    }
+    100% {
+        width: 99%;
+        height: 98%;
+    }
+}
+
+/*.box1:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform:scale(1.5);
+    background-color: blueviolet;
+}*/
+
+/* Miniboxes */
+/*.container {
+    background: #f0f0f0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}*/
+
+.container {
+    /*max-width: 1170px;*/
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.perspective {
+    padding: 120px 0;
+    overflow: hidden;
+}
+
+.perspective_flex {
+    display:flex;
+    margin-left: -15px;
+    margin-right: -15px;
+    transition: all 0.6s ease;
+}
+
+.perspective_col {
+    z-index: 0;
+    transition: all 0.65s ease;
+    width: 19.33333333%; /*33.33333333*/
+    /*padding: 0 15px;*/
+    box-sizing: content-box;
+}
+
+.minibox1 {
+    opacity:0;
+    /*padding:25px;*/
+    display: flex;
+    box-sizing: content-box;
+    transition: all 0.6s ease;
+    background: rgba(255,255,255,0.4);
+    border-radius: 25px;
+    background: linear-gradient(325deg, #3f5efb 0%, #fc466b 100%);
+    animation: 2s ease-out 2.5s forwards FadeIn;
+}
+
+.minibox_image {
+    /*display: block;*/
+    /*object-fit: fill;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
+
